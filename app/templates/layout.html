@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Techstitiution</title>
+ <meta charset="UTF-8">
+  <title>ARKEP</title>
+ <!-- https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+   		
+
 </head>
 <body>
+{% block content %}
 
+{% endblock %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
+
 </html>

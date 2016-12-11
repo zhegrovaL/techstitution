@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">QËLLIMI I NJOFTIMIT</li>
+    <li>TË DHËNAT PËR NDËRMARRËSIN</li>
+    <li>TË DHËNAT PËR ZYRTARIN LIGJËRISHT TË PËRGJEGJËSHËM</li>
+	<li>AKTIVITETET TË CILAT NJOFTOHEN/CREGJISTROHEN</li>
+	<li>PËRSHKRIMI I AKTIVITETIT DHE FAZA E OFRIMIT</li>
+	<li>Para</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">ARKEP</h2>
+    <h3 class="fs-subtitle">QËLLIMI I NJOFTIMIT</h3>
+    <input style="width:20%" type="radio" name="njoftim" value="Fillimi i Shërbimit">Fillimi i Shërbimit<br>
+    <input style="width:20%" type="radio" name="njoftim" value="Shtim Shërbimi">Shtim Shërbimi<br>
+    <input style="width:20%" type="radio" name="njoftim" value="Heqje Shërbimi">Heqje Shërbimi<br><br><br>
+    <input type="button" name="next" class="next action-button" value="Vazhdo" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">ARKEP</h2>
+    <h3 class="fs-subtitle">Të Dhënat Për Ndërmarrësin</h3>
+    <input type="text" name="Emri i Ndërmarrësit" placeholder="Emri i Ndërmarrësit" />
+    <input type="text" name="Numri i Regjistrimit të Biznesit" placeholder="Numri i Regjistrimit të Biznesit" />
+    <input type="text" name="Numri fiskal" placeholder="Numri fiskal" />
+	<input type="text" name="Adresa" placeholder="Adresa"/>
+	<input type="text" name="Numri i Telefonit" placeholder="Numri i Telefonit"/>
+	<input type="text" name="Numri i Faksit" placeholder="Numri i Faksit"/>
+	<input type="text" name="E-mail adresa" placeholder="E-mail adresa"/>
+    <input type="button" name="previous" class="previous action-button" value="Kthehu" />
+    <input type="button" name="next" class="next action-button" value="Vazhdo" />
+  </fieldset>
+  <fieldset>
+  <h2 class="fs-title">ARKEP</h2>
+  <h3 class="fs-subtitle">Të Dhënat Për Zyrtarin Ligjërisht Të Përgjegjëshëm</h3>
+	<input type="text" name="Emri i zyrtarit" placeholder="Emri i zyrtarit" />
+    <input type="text" name="Adresa" placeholder="Adresa" />
+    <input type="text" name="Numri i Telefonit" placeholder="Numri i Telefonit" />
+	<input type="text" name="Numri i Faksit" placeholder="Numri i Faksit"/>
+	<input type="text" name="E-mail adresa" placeholder="E-mail adresa"/>
+	<input type="text" name="Numri i ID" placeholder="Numri i ID"/>
+	<input type="button" name="previous" class="previous action-button" value="Kthehu" />
+	<input type="button" name="next" class="next action-button" value="Vazhdo" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">ARKEP</h2>
+    <h3 class="fs-subtitle">Aktivitetet Të Cilat Njoftohen/Cregjistrohen</h3>
+   
+    <input type="button" name="previous" class="previous action-button" value="Kthehu" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
+
+{% endblock %}
