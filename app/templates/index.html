@@ -1,56 +1,235 @@
 {% extends 'layout.html' %}
 {% block content %}
   <!-- multistep form -->
-<form id="msform">
+<form id="msform" method="POST" >
   <!-- progressbar -->
   <ul id="progressbar">
-    <li class="active">QËLLIMI I NJOFTIMIT</li>
-    <li>TË DHËNAT PËR NDËRMARRËSIN</li>
-    <li>TË DHËNAT PËR ZYRTARIN LIGJËRISHT TË PËRGJEGJËSHËM</li>
+  <li class="active">QËLLIMI I NJOFTIMIT</li>
+  <li>TË DHËNAT PËR NDËRMARRËSIN</li>
+  <li>TË DHËNAT PËR ZYRTARIN LIGJËRISHT TË PËRGJEGJËSHËM</li>
 	<li>AKTIVITETET TË CILAT NJOFTOHEN/CREGJISTROHEN</li>
 	<li>PËRSHKRIMI I AKTIVITETIT DHE FAZA E OFRIMIT</li>
-	<li>Para</li>
+	<li>PËRSHKRIMI I AKTIVITETIT DHE FAZA E OFERIMIT</li>
+  <li>DOKUMENTET E BASHKANGJITURA</li>
+  <li>KONFIRMIMI I NJOFTIMIT</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">ARKEP</h2>
     <h3 class="fs-subtitle">QËLLIMI I NJOFTIMIT</h3>
-    <input style="width:20%" type="radio" name="njoftim" value="Fillimi i Shërbimit">Fillimi i Shërbimit<br>
-    <input style="width:20%" type="radio" name="njoftim" value="Shtim Shërbimi">Shtim Shërbimi<br>
-    <input style="width:20%" type="radio" name="njoftim" value="Heqje Shërbimi">Heqje Shërbimi<br><br><br>
-    <input type="button" name="next" class="next action-button" value="Vazhdo" />
+  <input style="width:15%" type="radio" name="njoftim" value="Fillimi i Shërbimit">Fillimi i Shërbimit</br>
+    <input style="width:15%" type="radio" name="njoftim" value="Shtim Shërbimi">Shtim Shërbimi</br>
+    <input style="width:15%" type="radio" name="njoftim" value="Heqje Shërbimi">Heqje Shërbimi</br>
+    <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
     <h2 class="fs-title">ARKEP</h2>
     <h3 class="fs-subtitle">Të Dhënat Për Ndërmarrësin</h3>
-    <input type="text" name="Emri i Ndërmarrësit" placeholder="Emri i Ndërmarrësit" />
-    <input type="text" name="Numri i Regjistrimit të Biznesit" placeholder="Numri i Regjistrimit të Biznesit" />
-    <input type="text" name="Numri fiskal" placeholder="Numri fiskal" />
+    <input type="text" name="Emri_Ndërmarrësit" placeholder="Emri i Ndërmarrësit" required/>
+    <input type="text" name="Numri_Regjistrimit" placeholder="Numri i Regjistrimit të Biznesit" />
+    <input type="text" name="Numri_fiskal" placeholder="Numri fiskal" />
 	<input type="text" name="Adresa" placeholder="Adresa"/>
-	<input type="text" name="Numri i Telefonit" placeholder="Numri i Telefonit"/>
+	<input type="text" name="Numri_Telefonit" placeholder="Numri i Telefonit"/>
 	<input type="text" name="Numri i Faksit" placeholder="Numri i Faksit"/>
-	<input type="text" name="E-mail adresa" placeholder="E-mail adresa"/>
-    <input type="button" name="previous" class="previous action-button" value="Kthehu" />
-    <input type="button" name="next" class="next action-button" value="Vazhdo" />
+	<input type="text" name="email" placeholder="E-mail adresa"/></br>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button"  value="Next" />
   </fieldset>
   <fieldset>
   <h2 class="fs-title">ARKEP</h2>
   <h3 class="fs-subtitle">Të Dhënat Për Zyrtarin Ligjërisht Të Përgjegjëshëm</h3>
-	<input type="text" name="Emri i zyrtarit" placeholder="Emri i zyrtarit" />
+	<input type="text" name="Emri_zyrtarit" placeholder="Emri i zyrtarit" />
     <input type="text" name="Adresa" placeholder="Adresa" />
-    <input type="text" name="Numri i Telefonit" placeholder="Numri i Telefonit" />
-	<input type="text" name="Numri i Faksit" placeholder="Numri i Faksit"/>
-	<input type="text" name="E-mail adresa" placeholder="E-mail adresa"/>
-	<input type="text" name="Numri i ID" placeholder="Numri i ID"/>
-	<input type="button" name="previous" class="previous action-button" value="Kthehu" />
-	<input type="button" name="next" class="next action-button" value="Vazhdo" />
+    <input type="text" name="Numri_Telefonit" placeholder="Numri i Telefonit" />
+	<input type="text" name="Numri_Faksit" placeholder="Numri i Faksit"/>
+	<input type="text" name="Email" placeholder="E-mail adresa"/>
+	<input type="text" name="Numri_ID" placeholder="Numri i ID"/></br>
+	<input type="button" name="previous" class="previous action-button" value="Previous" />
+	<input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
+
+      <h2 class="fs-title">ARKEP</h2>
+      <h3 class="fs-subtitle">Aktivitetet Të Cilat Njoftohen/Cregjistrohen</h3>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="3">1. Ofrimi i rrjetit publik fiks:</th>
+        </tr>
+        <tr>
+          <td><input style="width:20%" type="checkbox" name="nje" value="Lokal">Lokal</input></td>
+            <td><input style="width:20%" type="checkbox" name="nje" value="Nacional">Nacional</input></td>
+              <td><input  style="width:20%" type="checkbox" name="nje" value="Tjera">Tjera</input></td>
+            </tr>
+          </table>
+</div>
+<div>
+  <table style="width:100%">
+    <tr>
+      <th>2. Ofrimi i shërbimeve publike fikse:</th>
+    </tr>
+    <tr>
+      <td><input style="width:20%" type="checkbox" name="dy" value="SherbimeLokale">Shërbime telefonike lokale/nacionale</input></td>
+</tr>
+<tr>
+        <td><input style="width:20%" type="checkbox" name="dy" value="SherbimeNderkombetare">Shërbime telefonike ndërkombëtare</input></td>
+</tr>
+<tr>
+          <td><input  style="width:20%" type="checkbox" name="dy" value="TelefonaPublik">Telefona publik me pagesë</input></td>
+        </tr>
+        <tr>
+          <td><input  style="width:20%" type="checkbox" name="dy" value="SherbimeTjera"> Shërbime tjera ( ​specifikoj)</input></td>
+        </tr>
+      </table>
+</div>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="2">3. Ofrimi i rrjetit publik mobil:</th>
+        </tr>
+        <tr>
+          <td><input style="width:20%" type="checkbox" name="tre" value="Lokal">Lokal</input></td>
+            <td><input style="width:20%" type="checkbox" name="tre" value="Nacional">Nacional</input></td>
+            </tr>
+          </table>
+</div>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="2">4. Ofrimi i shërbimeve publike mobile:</th>
+        </tr>
+        <tr>
+      <td><input style="width:20%" type="checkbox" name="kater" value="SherbimeZeri">Shërbime telefonike të zërit</input></td>
+</tr>
+<tr>
+            <td><input style="width:20%" type="checkbox" name="kater" value="TransmetimDhenave">Transmetim të dhënash</input></td>
+            </tr>
+          </table>
+</div>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="2">5. Ofrimi i shërbimeve të linjave me qira:</th>
+        </tr>
+        <tr>
+      <td><input style="width:20%" type="checkbox" name="pese" value="FiberOptike">Fiber optik të pa-ndriquar</input></td>
+</tr>
+<tr>
+            <td><input style="width:20%" type="checkbox" name="pese" value="LinjaTjera">Linja tjera me qira</input></td>
+            </tr>
+          </table>
+</div>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="2">6. Ofrimi i rrjetave publike me transmetim satelitor:</th>
+        </tr>
+        <tr>
+      <td><input style="width:20%" type="checkbox" name="gjashte" value="TransmetimSatelitor">Ofrimi i rrjetave me transmetim satelitor</input></td>
+</tr>
+          </table>
+</div>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="2">7. Ofrimi i shërbimeve publike satelitore:</th>
+        </tr>
+        <tr>
+      <td><input style="width:20%" type="checkbox" name="shtate" value="PublikeSatelitore">Ofrimi i shërbimeve publike satelitore</input></td>
+</tr>
+          </table>
+</div>
+<div>
+      <table style="width:100%">
+        <tr>
+          <th colspan="2">8. Ofrimi i shërbimeve të transmetimit të të dhënave(Internetit):</th>
+        </tr>
+        <tr>
+      <td><input style="width:20%" type="checkbox" name="tete" value="OfrimiInternetit">Ofrimi i shërbimeve publike te transmetimit të të dhënave(Internetit)</input></td>
+</tr>
+          </table>
+          <div>
+                <table style="width:100%">
+                  <tr>
+                    <th colspan="2">9. Ofrimi i shërbimeve me vlerë të shtuar:</th>
+                  </tr>
+                  <tr>
+                <td><input style="width:20%" type="checkbox" name="nente" value="SherbimeteShtuara">Ofrimi i shërbimeve me vlerë të shtuar</input></td>
+          </tr>
+                    </table>
+          </div>
+</div>
+<input type="button" name="previous" class="previous action-button" value="Previous" />
+<input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+<fieldset>
+  <h2 class="fs-title">ARKEP</h2>
+  <h3 class="fs-subtitle">Përshkrimi i Aktivitetit dhe Faza e Oferimit</h3>
+<div id="_pese" >
+<p>Pershkrimi i rrjetit dhe/ose sherbimi qe do te ofrohet:</p></br>
+<ul>
+  <li>A do te perdoret rrjeti vetanak apo ndonje rrjet tjeter.</li>
+  <li>Teknologjia e cila do te perdoret</li>
+  <li>Radio frekuencat, te cilat planifikohen te perdoren.</li>
+  <li>Lista e sherbimeve qe planifikohet te perdoret</li>
+</ul>
+</div>
+<div id="textarea_">
+  <textarea rows="5" cols="50"></textarea>
+</div>
+<hr><br>
+<div>
+  <h6>Faza e Ofrimit:</h6>
+<div id="_pese">
+  <ul>
+    <li>Te specifikohet koha e parashikuar per fillimi e aktivitetit te komunikimeve elektronike</li>
+  </ul>
+</div>
+<div id="textarea_">
+    <textarea rows="5" cols="50"></textarea>
+</div>
+</div>
+<input type="button" name="previous" class="previous action-button" value="Previous" />
+<input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>
+<fieldset>
+  <h2 class="fs-title">ARKEP</h2>
+  <h3 class="fs-subtitle">DOKUMENTET E BASHKANGJITURA</h3>
+  <p id="pd"> Dokumentet e bashkangjitura si shtojcë aplikacionit te Njoftimit:</p></br>
+  <ol>
+    <li>Kopjent e certifikates se regjistrimit te biznesit <input  type="file" name="datafile" size="40"></li>
+    <li>Kopjen e certifikates se numrit fiskal<input  type="file" name="datafile" size="40"></li>
+    <li>Kopjen e dokumentit 'Informat mbi biznesin'<input  type="file" name="datafile" size="40"></li>
+  </ol>
+  <input type="button" name="previous" class="previous action-button" value="Previous" />
+  <input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>
+<fieldset>
+  <h2 class="fs-title">ARKEP</h2>
+  <h3 class="fs-subtitle">KONFIRMIMI I NJOFTIMIT</h3>
+  <p id="pd">Nderrmarrja kerkon qe t'i leshohet cvertifikata e konfirmimit te njoftimit per ofrimiin e rrjeteve
+    dhe/ose sherbimeve publike te komunikimeve elektronike te njoftuara permes ketij formulari</p>
+    <input style="width:15%" type="radio" name="njoftim" value="confir">Po</br>
+    <input style="width:15%" type="radio" name="njoftim" value="confir">Jo</br>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>
+  <fieldset>
     <h2 class="fs-title">ARKEP</h2>
-    <h3 class="fs-subtitle">Aktivitetet Të Cilat Njoftohen/Cregjistrohen</h3>
-   
-    <input type="button" name="previous" class="previous action-button" value="Kthehu" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    <h3 class="fs-subtitle">DETYRIMET LIGJORE</h3>
+<div class="detyrimet">
+	<label> ● Unë nëpërmjet këtij dokumenti deklaroj se do të ushtroj aktivitet në fushën e komunikimeve elektronike të shënuara më sipër dhe aplikoj për regjistrim në regjistrin e ofrueseve të rrjeteve dhe shërbimeve të komunikimeve elektronike të Autoritetit (ARKEP).
+   <br><br> ● Unë nëpërmjet këtij dokumenti deklaroj se kam mbyllur aktivitetet e komunikimeve elektronike të shënuara më sipër.
+   <br><br> ● Unë nëpërmjet këtij dokumenti deklaroj se kam mbyllur çdo aktivitet të komunikimeve elektronike nën regjimin e Autorizimit të përgjithshëm.
+     <br><br> ● Unë nëpërmjet këtij dokumenti deklaroj se të dhënat e mia kanë pësuar ndryshime, sikurse përshkruhen në formular.
+        <br><br> ● Unë nëpërmjet këtij dokumenti deklaroj se kam ndryshuar formën ligjore të ndërmarrjes sime siç përshkruhet në formular. 
+    <br><br> ● Unë nëpërmjet këtij dokumenti paraqes në ARKEP të gjithë dokumentacionin e nevojshëm ligjor dhe/ose të gjithë dokumentet që sigurojnë se nënshkruesi i këtij Njoftimi Regjistrimi ka lidhje me personin përfaqësues.
+     <br><br> ● Unë deklaroj se informacioni që përfshihet në deklarimin e paraqitur, sikurse çdo informacion tjetër shoqërues , është i saktë dhe i vërtetë, dhe jam plotësisht i vetëdijshëm për faktin që, lidhur me angazhimin në çdo aktivitet të komunikimeve elektronike për të cilin është e nevojshme të sigurosh të drejtën e përdorimit për numeracion dhe frekuenca, të drejta të cilat nuk sigurohen nëpërmjet kësaj procedurë, unë duhet të paraqes një aplikim për të fituar të drejtat e përdorimit të cituara më sipër përpara fillimit të ofrimit të shërbimit.</br></br>
+</label>
+</div>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input style="background-color:red; color:white" id="sb" type="submit" value="Submit" />
+
   </fieldset>
 </form>
 
